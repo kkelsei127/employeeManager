@@ -15,7 +15,11 @@ function addDept(){
             message: 'What is the departments name?',
             name: dept_name
         }
-    ])
+    ]).then(data =>{
+        //add data to dept name in db
+    });
+    console.log(`Added new department to directory!`);
+    directory();
 }
 
 function addRole(){
@@ -31,11 +35,16 @@ function addRole(){
             name: salary
         },
         {
-            type: 'input',
-            message: "What is the department's ID?",
-            name: department_id
+            type: 'list',
+            message: "What department does this role belong to?",
+            choices: ['Customer Service', 'Production', 'Human Resources', 'Executive'], //insert choices ,
+            name: department
         }
-    ])
+    ]).then(data => {
+        //add role to data
+    });
+    console.log(`Added new role to directory!`);
+    directory();
 }
 
 function addEmployee(){
@@ -51,16 +60,20 @@ function addEmployee(){
             name: last_name
         },
         {
-            type: 'input',
-            message: "What is the employee's role ID?",
-            name: role_id
+            type: 'list',
+            message: "What is the employee's role?",
+            choices: ['Barista', 'Founder', 'Baker', 'Shift Supervisor', 'Executive Pastry Chef', 'Payroll Admin', 'Operations Manager', 'Financials Manager'],
+            name: role
         },
         {
-            type: 'input',
-            message: "What is the employee's department ID?",
-            name: department_id
+            type: 'list',
+            message: "Who is the employee's manager?",
+            choices: ['Jane Dough', "Leo Johnson", "Aurelia Banks", "Monet Bags"],
+            name: manager
         }
     ])
+    console.log(`Added new employee to directory!`);
+    directory();
 }
 
 
