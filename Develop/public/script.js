@@ -188,13 +188,13 @@ function allEmps(){
 
 function updateEmp(){
 //use query to show employees
-    const sqlEmp = "SELECT * FROM employee";
+    const sqlEmp = "SELECT id, first_name FROM employee";
 
     db.query(sqlEmp, (err,rows) => {
         if (err) {
             console.log(err);
         }
-        const employees = rows.map(obj => obj.first_name)
+        const employees = rows.map(obj => obj.id + " " + obj.first_name)
 
         //this grabs to roles title
         const sqlRole = "SELECT id, title FROM roles"
@@ -218,9 +218,9 @@ function updateEmp(){
                 }
             ]).then(data => {
                 //create update statement
-                const sql = "UPDATE employee SET first_name = ? role_id = ?"           
+                const sql = "UPDATE employee SET role_id = ? WHERE id = ?"           
 
-                const params = [data.employee, data.title.split(" ")[0]]
+                const params = [data.title.split(" ")[0], data.employee.split(" ")[0]];
 
                 db.query(sql, params, (err, result) => {
                     if (err) {
