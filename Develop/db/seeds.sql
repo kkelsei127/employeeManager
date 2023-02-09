@@ -1,25 +1,25 @@
-INSERT INTO department (id, dept_name)
-VALUES  (001, "Customer Service"),
-        (002, "Production"),
-        (003, "Human Resources"),
-        (004, "Executive");
+INSERT INTO department (dept_name)
+VALUES  ("Customer Service"),
+        ("Production"),
+        ("Human Resources"),
+        ("Executive");
 
-INSERT INTO roles (id, title, salary, department_id)
-VALUES  (001, "Barista", 35,000.00, 001),
-        (002, "Founder", 400,000.00, 004),
-        (003, "Baker", 40,000.00, 002),
-        (004, "Shift Supervisor", 40,500.00, 001),
-        (005, "Executive Pastry Chef", 75,000.00, 002),
-        (006, "Payroll Admin", 37,500.00, 003),
-        (007, "Operations Manager", 80,000.00, 004),
-        (008, "Financial Manager", 55,000.00, 003);
+INSERT INTO roles (department_id, title, salary)
+VALUES  (001, "Barista", 35000),
+        (004, "Founder", 90000),
+        (002, "Baker", 40000),
+        (001, "Shift Supervisor", 40500),
+        (002, "Executive Pastry Chef", 75000),
+        (003, "Payroll Admin", 37500),
+        (004, "Operations Manager", 80000),
+        (003, "Financial Manager", 55000);
 
-INSERT INTO employee (id, first_name, last_name, role_id, manager_id)
-VALUES   (001, "Jane", "Dough", 002,),
-         (002, "James", "Bond", 002, 007),
-         (003, "Jeffrey", "Huxtable", 006, 008),
-         (004, "Blade", "Blurbrick", 001, 004),
-         (005, "Aurelia", "Banks", 005),
-         (006, "Leo", "Johnson", 004),
-         (007, "Monet", "Bags", 008),
-         (008, "Susie", "Johnson", 003, 005);
+INSERT INTO employee (first_name, last_name, role_id, manager_id)
+VALUES  ("Jane", "Dough", 002, NULL),
+        ("James", "Bond", 002, 007),
+        ("Jeffrey", "Huxtable", 006, 008),
+        ("Blade", "Blurbrick", 001, 004),
+        ("Aurelia", "Banks", 005, NULL),
+        ("Leo", "Johnson", 004, NULL),
+        ("Monet", "Bags", 008, NULL),
+        ("Susie", "Johnson", 003, 005);
