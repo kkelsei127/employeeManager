@@ -38,6 +38,10 @@ THEN I am prompted to select an employee to update and their new role and this i
 Run npm i -mysql2 
 Run npm i -inquirer
 
+
+## Walkthrough video link
+https://drive.google.com/file/d/1PiQ1gN2esVcnrDPgrqk9MdzuVXHk12KS/view
+
 ## License
 
 No Licenses were used
